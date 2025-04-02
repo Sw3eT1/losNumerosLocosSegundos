@@ -7,7 +7,7 @@ def read_matrices_file(file_path):
     i = 0
     while i < len(lines):
         try:
-            print(f"Odczytuję linię {i}: {lines[i]}")
+            # print(f"Odczytuję linię {i}: {lines[i]}")
 
             rows, cols = map(int, lines[i].split())
             i += 1
