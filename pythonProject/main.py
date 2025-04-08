@@ -15,5 +15,5 @@ while True:
 for i in range(numberOfMatrices):
     A, b = matrices[i]
     n = len(A)
+    print(f"Rozwiązana macierz {i +1} rozszerzona (w postaci zredukowanej):")
     wynik = jordanElimination(A, b, n)
-    print(f"Macierz {i+1}: {wynik}")

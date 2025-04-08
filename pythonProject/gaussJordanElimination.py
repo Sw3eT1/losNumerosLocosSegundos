@@ -27,8 +27,13 @@ def jordanElimination(A, b, n):
     for i in range(n):
         if all(abs(Ab[i][j]) < Decimal("1e-12") for j in range(n)):
             if abs(Ab[i][n]) > Decimal("1e-12"):
-                return "Układ sprzeczny"
-            return "Układ nieoznaczony"
+                print("Układ sprzeczny")
+                break
+            print("Układ nieoznaczony")
+            break
 
+    for row in Ab:
+        macierz = ["{:.1f}".format(0.0 if abs(float(x)) < 1e-12 else float(x)) for x in row[:n]]
+        wyraz_wolny = "{:.1f}".format(0.0 if abs(float(row[n])) < 1e-12 else float(row[n]))
+        print("[" + "  ".join(macierz) + " | " + wyraz_wolny + "]")
 
-    return [round(float(Ab[i][n]), 6) for i in range(n)]
